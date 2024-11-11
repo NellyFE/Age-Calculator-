@@ -1,0 +1,68 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+main {
+background-color: rgba(173, 214, 250, 0.469);
+  justify-items: center;
+  height: 100vh;
+  align-content: center;
+}
+
+#main-container{
+    background-color: white;
+   padding: 50px;
+   border-radius: 0% 0% 20% 0%;
+}
+
+#date-input {
+  display: flex;
+  border-bottom: 1px solid grey;
+  padding: 20px;
+
+}
+
+
+#age-result{
+    display: flex;
+    flex-direction: column;
+}
+
+#years-div , #months-div , #days-div{
+display: flex;
+gap: 20px;
+}
+
+#day-box , #month-box , #year-box{
+    width: 30%;
+    padding: 10px;
+    outline: none;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
+.texts{
+    color: grey;
+}
+
+input::placeholder {
+    font-weight: bold; 
+    color: grey; 
+  }
+
+  .fa-solid{
+background-color: blueviolet;
+color: white;
+padding: 23px;
+border-radius: 50%;
+position: absolute;
+right: 26.3%;
+margin-top: -30px;
+  }
+
+  h1{
+    font-weight: bolder;
+    font-size: xx-large;
+  }
