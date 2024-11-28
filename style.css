@@ -43,6 +43,17 @@ gap: 20px;
     border-radius: 3px;
 }
 
+.error-border {
+  border: 2px solid red;
+}
+
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
 .texts{
     color: grey;
 }
