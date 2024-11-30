@@ -16,7 +16,8 @@
   <body>
     <main>
 
-      <div id="main-container">
+      <div id="general-container">
+        <div id="main-container">
       <div id="date-input">
         <div id="day">
           <p class="texts">Day</p>
@@ -26,7 +27,7 @@
 
         <div id="month">
           <p  class="texts">Month</p>
-          <input type="number" placeholder="MM" id="month-box"/>
+          <input min="1" max="12" type="number" placeholder="MM" id="month-box"/>
           <span id="month-error" class="error-text" style="display: none;">This field is required</span>
         </div>
 
@@ -35,7 +36,8 @@
           <input type="number" placeholder="YYYY" id="year-box"/>
           <span id="year-error" class="error-text" style="display: none;">This field is required</span>
         </div>
-        
+      </div>
+      <h3 id="error" style="color: red;"></h3>
       </div>
 
       <div id="submitBtn"><i class="fa-solid fa-arrow-down"></i></div>

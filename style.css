@@ -5,42 +5,51 @@ body {
 }
 
 main {
-background-color: rgba(173, 214, 250, 0.469);
+  background-color: rgba(173, 214, 250, 0.469);
   justify-items: center;
   height: 100vh;
   align-content: center;
 }
 
-#main-container{
-    background-color: white;
-   padding: 50px;
-   border-radius: 0% 0% 20% 0%;
+#general-container {
+  background-color: white;
+  padding: 50px;
+  border-radius: 0% 0% 20% 0%;
 }
 
 #date-input {
   display: flex;
   border-bottom: 1px solid grey;
   padding: 20px;
-
+  padding-bottom: 50px;
 }
 
-
-#age-result{
-    display: flex;
-    flex-direction: column;
+#age-result {
+  display: flex;
+  flex-direction: column;
 }
 
-#years-div , #months-div , #days-div{
-display: flex;
-gap: 20px;
+#years-div,
+#months-div,
+#days-div {
+  display: flex;
+  gap: 20px;
 }
 
-#day-box , #month-box , #year-box{
-    width: 30%;
-    padding: 10px;
-    outline: none;
-    border: 2px solid grey;
-    border-radius: 3px;
+#day-box,
+#year-box,
+#month-box {
+  width: 50%;
+  padding: 10px;
+  outline: none;
+  border: 2px solid grey;
+  border-radius: 3px;
+}
+
+#day,
+#month,
+#year {
+  width: 30%;
 }
 
 .error-border {
@@ -54,26 +63,46 @@ gap: 20px;
   display: block;
 }
 
-.texts{
-    color: grey;
+.texts {
+  color: grey;
 }
 
 input::placeholder {
-    font-weight: bold; 
-    color: grey; 
+  font-weight: bold;
+  color: grey;
+}
+
+.fa-solid {
+  background-color: blueviolet;
+  color: white;
+  padding: 23px;
+  border-radius: 50%;
+  position: absolute;
+  right: 30.7%;
+  margin-top: -50px;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+@media (max-width: 700px) {
+  #main-container {
+    width: 70%;
+  }
+  .fa-solid {
+    right: 50%;
+    padding: 20px;
   }
 
-  .fa-solid{
-background-color: blueviolet;
-color: white;
-padding: 23px;
-border-radius: 50%;
-position: absolute;
-right: 26.3%;
-margin-top: -30px;
+  #day-box,
+  #month-box,
+  #year-box {
+    width: 40%;
   }
 
-  h1{
-    font-weight: bolder;
-    font-size: xx-large;
+  #date-input {
+    padding-bottom: 50px;
   }
+}
