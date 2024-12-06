@@ -7,18 +7,21 @@ const monthError = document.getElementById("month-error");
 const yearError = document.getElementById("year-error");
 const error = document.getElementById("error");
 
-const resetInput = () => {
+//to reset input
+const setInput = (valueA, valueB, valueC) => {
   document
     .getElementById("years-div")
-    .querySelector("#result-input").textContent = "- -";
+    .querySelector("#result-input").textContent = valueA;
   document
     .getElementById("months-div")
-    .querySelector("#result-input").textContent = "- -";
+    .querySelector("#result-input").textContent = valueB;
   document
     .getElementById("days-div")
-    .querySelector("#result-input").textContent = "- -";
+    .querySelector("#result-input").textContent = valueC;
 };
 
+
+//Validatiion
 function validation() {
   const userDay = parseInt(dayInput.value);
   const userMonth = parseInt(monthInput.value);
@@ -35,33 +38,28 @@ function validation() {
   if (isFutureDate) {
     error.innerText = "Please Enter a valid previous date";
     isValid = false;
-    resetInput()
+    setInput("- -", "- -", "- -");
   } else {
     error.innerText = "";
   }
 
+  //error message
+  const errorMessage = (text) => {
+    dayError.style.display = "block";
+    dayError.innerText = text;
+    dayInput.classList.add("error-border");
+    dayInput.style.borderColor = "red";
+    isValid = false;
+    setInput("- -", "- -", "- -");
+  };
+
   //Validate Day Input
   if (isNaN(userDay) || userDay < 1 || userDay > 31) {
-    dayError.style.display = "block";
-    dayError.innerText = "Enter a valid day (1-31)";
-    dayInput.classList.add("error-border");
-    dayInput.style.borderColor = "red";
-    isValid = false;
-    resetInput()
+    errorMessage("Enter a valid day (1-31)");
   } else if ((userMonth === 9 || 4 || 6 || 11 || 2) && userDay > 30) {
-    dayError.style.display = "block";
-    dayError.innerText = "Month cannot have more that 30 Days";
-    dayInput.classList.add("error-border");
-    dayInput.style.borderColor = "red";
-    isValid = false;
-    resetInput()
+    errorMessage("Month cannot have more that 30 Days");
   } else if (userMonth === 2 && userDay > 28) {
-    dayError.style.display = "block";
-    dayError.innerText = "Month cannot have more that 28 Days";
-    dayInput.classList.add("error-border");
-    dayInput.style.borderColor = "red";
-    isValid = false;
-    resetInput()
+    errorMessage("Month cannot have more that 28 Days");
   } else {
     dayError.style.display = "none";
     dayInput.classList.remove("error-border");
@@ -75,7 +73,7 @@ function validation() {
     monthInput.classList.add("error-border");
     monthInput.style.borderColor = "red";
     isValid = false;
-    resetInput()
+    setInput("- -", "- -", "- -");
   } else {
     monthError.style.display = "none";
     monthInput.classList.remove("error-border");
@@ -93,7 +91,7 @@ function validation() {
     yearInput.classList.add("error-border");
     yearInput.style.borderColor = "red";
     isValid = false;
-    resetInput()
+    setInput("- -", "- -", "- -");
   } else {
     yearError.style.display = "none";
     yearInput.classList.remove("error-border");
@@ -132,15 +130,7 @@ function ageCalculator() {
 
   const days = Math.floor(remainingAfterMonths / msInDay);
 
-  document
-    .getElementById("years-div")
-    .querySelector("#result-input").textContent = years;
-  document
-    .getElementById("months-div")
-    .querySelector("#result-input").textContent = months;
-  document
-    .getElementById("days-div")
-    .querySelector("#result-input").textContent = days;
+  setInput(years, months, days);
 }
 
 submitBtn.addEventListener("click", ageCalculator);
