@@ -79,12 +79,21 @@ input::placeholder {
   border-radius: 50%;
   position: absolute;
   right: 30.7%;
-  margin-top: -50px;
+  margin-top: -35px;
 }
 
 h1 {
   font-weight: bolder;
   font-size: xx-large;
+}
+
+#error {
+  position: absolute;
+  margin-top: 10px;
+}
+
+#age-result {
+  padding-top: 20px;
 }
 
 @media (max-width: 700px) {
@@ -93,6 +102,8 @@ h1 {
   }
   .fa-solid {
     right: 50%;
+    padding: 20px;
+    margin-top: -30px;
     padding: 20px;
   }
 
@@ -107,8 +118,16 @@ h1 {
   }
 
   #general-container {
-width: 70%;
+    width: 70%;
     padding: 50px;
-   
+  }
+
+  #error {
+    position: absolute;
+    margin-top: 40px;
+  }
+
+  #age-result {
+    padding-top: 50px;
   }
 }

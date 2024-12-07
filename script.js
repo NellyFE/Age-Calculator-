@@ -20,7 +20,6 @@ const setInput = (valueA, valueB, valueC) => {
     .querySelector("#result-input").textContent = valueC;
 };
 
-
 //Validatiion
 function validation() {
   const userDay = parseInt(dayInput.value);
@@ -32,7 +31,7 @@ function validation() {
   const userDate = new Date(userYear, userMonth - 1, userDay); // Month is 0-indexed
   const today = new Date();
 
-    //Future validation
+  //Future validation
   const isFutureDate = userDate > today;
 
   if (isFutureDate) {
@@ -58,8 +57,8 @@ function validation() {
     errorMessage("Enter a valid day (1-31)");
   } else if ((userMonth === 9 || 4 || 6 || 11 || 2) && userDay > 30) {
     errorMessage("Month cannot have more that 30 Days");
-  } else if (userMonth === 2 && userDay > 28) {
-    errorMessage("Month cannot have more that 28 Days");
+  } else if (userMonth === 2 && userDay > 29) {
+    errorMessage("Month cannot have more that 29 Days");
   } else {
     dayError.style.display = "none";
     dayInput.classList.remove("error-border");
@@ -83,10 +82,11 @@ function validation() {
   // Validate year input
   if (
     isNaN(userYear) ||
+    userYear < 1600 ||
     userYear > new Date().getFullYear()
   ) {
     yearError.style.display = "block";
-    yearError.innerText = "Enter a current year";
+    yearError.innerText = "Enter a valid year";
     yearInput.classList.add("error-border");
     yearInput.style.borderColor = "red";
     isValid = false;
