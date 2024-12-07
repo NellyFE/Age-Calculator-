@@ -89,7 +89,7 @@ h1 {
 
 @media (max-width: 700px) {
   #main-container {
-    width: 70%;
+    width: 100%;
   }
   .fa-solid {
     right: 50%;
@@ -104,5 +104,11 @@ h1 {
 
   #date-input {
     padding-bottom: 50px;
+  }
+
+  #general-container {
+width: 70%;
+    padding: 50px;
+   
   }
 }

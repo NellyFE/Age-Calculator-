@@ -32,9 +32,9 @@ function validation() {
   const userDate = new Date(userYear, userMonth - 1, userDay); // Month is 0-indexed
   const today = new Date();
 
+    //Future validation
   const isFutureDate = userDate > today;
 
-  //Future validation
   if (isFutureDate) {
     error.innerText = "Please Enter a valid previous date";
     isValid = false;
@@ -83,7 +83,6 @@ function validation() {
   // Validate year input
   if (
     isNaN(userYear) ||
-    userYear < 1900 ||
     userYear > new Date().getFullYear()
   ) {
     yearError.style.display = "block";
